@@ -65,4 +65,18 @@ x.print_name()
 
 
         
-        
+class Animal:
+    def __init__(self, type1, type2):
+        self.type1 = type1
+        self.type2 = type2
+    def print_name(self):
+        print(self.type1, self.type2)
+
+
+class Animal_baby(Animal):
+    def __init__(self, age, height, eat):
+        super().__init__(age, height)
+        self.eat = eat
+x = Animal_baby("26", "1000 ft", "ants")
+x.print_name()
+
