@@ -1,29 +1,35 @@
-def fun1(n):
-    return n*(n+1)/2
-print(fun1(4))
+def printnumber(n):
+    iter = 0
+    print("The number the user gave was: ", n)
+    iter += 1
+    print("The Iteration is :", iter)
 
-def fun2(n):
-    sum = 0
-    for i in range(1, n+1):
-        sum += i
-    return sum
-print(fun2(4))
-
-def fun3(n):
-    sum = 0
-    for i in range(1, n+1):
-        for j in range(1, i+1):
-            sum+=1
-        return sum
-
-print(fun3(4))
+printnumber(10)
+printnumber(5)
+printnumber(2)
 
 
-num = int(input("What is the number?: "))
-num2 = 0
+def ontime(n):
+    iter = 0
+    for i in range(0, n):
+        for j in range(0, n+1):
+            iter += 1
+            print("The number is: ", iter)
+        
+ontime(4)
+ontime(10)
+ontime(42)
 
-while num2 < num:
-    print("+1")
-    num2 += 1
-print(f"={num}")
+def onesquaretime(n):
+    iter = 0
+    for n in range(0, n):
+        for j in range(0, n):
+            print("*", end=" ")
+            iter +=1
+        iter+=1
+    print("The iteration is: ", iter)
+
+onesquaretime(10)
+onesquaretime(5)
+onesquaretime(2)
 
