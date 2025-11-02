@@ -1,35 +1,27 @@
-def printnumber(n):
-    iter = 0
-    print("The number the user gave was: ", n)
-    iter += 1
-    print("The Iteration is :", iter)
+def prints(n):
+    if (n<=0):
+        return
+    print("Codingal")
+    print(n/2)
+    for _ in range(1, 10):
+        prints(n/2)
 
-printnumber(10)
-printnumber(5)
-printnumber(2)
+prints(10)
 
+def sum(n):
+    return n*(n+1)/2
 
-def ontime(n):
-    iter = 0
-    for i in range(0, n):
-        for j in range(0, n+1):
-            iter += 1
-            print("The number is: ", iter)
-        
-ontime(4)
-ontime(10)
-ontime(42)
+def arrey_sum(a):
+    sum = 0
+    for i in a:
+        sum = sum+i
+    return sum
 
-def onesquaretime(n):
-    iter = 0
-    for n in range(0, n):
-        for j in range(0, n):
-            print("*", end=" ")
-            iter +=1
-        iter+=1
-    print("The iteration is: ", iter)
+a = [12,325,3,12,2,4,3,4,632,234,456,2,4,1,5,245]
 
-onesquaretime(10)
-onesquaretime(5)
-onesquaretime(2)
+arrey_sum(a)
 
+def sums(n):
+    if (n<=0):
+        return
+    return n+ sum(n+1)
