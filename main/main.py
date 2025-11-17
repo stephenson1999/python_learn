@@ -1,41 +1,23 @@
-# #Activity 1
-# num = int(input("Enter a number: "))
-# s = num/2
-# fractional_part = str(int(str(s).split(".")[1]))
-# if num == 2:
-#     print("The number is a prime number!")
-# elif fractional_part == "0":
-#     print("This number is not a prime number!")
-# else:
-#     print("The number is a prime number!")
+num1 = 4
+num2 = 20
+print("num1 & num2 = ", num1 & num2)
+print("num1 | num2 = ", num1 | num2)
+print("num1 ^ num2 = ", num1 ^ num2)
+print("num1 << num2 = ", num1 << num2)
+print("num1 >> num2 = ", num1 >> num2)
 
-#Acitivity 2
+def is_Even_Old(n):
+    if(n^1 == n+1):
+        return True
+    else:
+        return False
 
-def Sieve_of_Eratosthenes(num):
+number = int(input("What is the number?: "))
+if (is_Even_Old(number)):
+    print("Even")
 
-    prime = [True for i in range(num + 1)]
-
-    p = 2
-
-    while p * p <= num:
-
-        if prime[p]:
-
-            for i in range(p * p, num + 1, p):
-
-                prime[i] = False
-
-                p += 1
-
-            for p in range(2, num + 1):
-
-                if prime[p]:
-                    print(p, end=" ")
-
-num = int(input("Enter a number: "))
-
-Sieve_of_Eratosthenes(num)
-
+else:
+    print("Old")
 
 
 

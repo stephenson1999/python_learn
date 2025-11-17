@@ -14,3 +14,7 @@ else:
             break
     else:
         print(f"{number} is prime!")
+
+
+
+
