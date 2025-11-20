@@ -1,26 +1,33 @@
-num1 = 4
-num2 = 20
-print("num1 & num2 = ", num1 & num2)
-print("num1 | num2 = ", num1 | num2)
-print("num1 ^ num2 = ", num1 ^ num2)
-print("num1 << num2 = ", num1 << num2)
-print("num1 >> num2 = ", num1 >> num2)
+def numberOfBits(n):
+    ones = 0
+    zeros = 0
+    while(n):
+        if(n&1==1):
+            ones += 1
+        else:
+            zeros += 1
+        n>>=1
+    print(f"Ones: {ones} Zeros: {zeros}")
 
-def is_Even_Old(n):
-    if(n^1 == n+1):
-        return True
+num = int(input("What is the Number?: "))
+numberOfBits(num)
+
+
+
+
+
+
+
+
+def setOrNot(num, n):
+    if num & (1<<(n-1)):
+        print("\n Set")
     else:
-        return False
+        print("\n Not a Set")
 
-number = int(input("What is the number?: "))
-if (is_Even_Old(number)):
-    print("Even")
-
-else:
-    print("Old")
-
-
-
+num = int(input("What is the number?: "))
+n = int(input("Enter a position?: "))
+setOrNot(num, n)
 
 
     
