@@ -1,34 +1,42 @@
-def numberOfBits(n):
-    ones = 0
-    zeros = 0
-    while(n):
-        if(n&1==1):
-            ones += 1
+def out_occering_2(arr):
+    out_corred = []
+    res = 0
+    for i in arr:
+        res = res^i
+    return res
+arr = []
+size = int(input("Enter the size of the array"))
+while (size):
+    num = int(input("Enter a number $(o <> o)$ :"))
+    arr.append(num)
+    size -= 1
+
+print("The odd occurring element is: ", out_occering_2)
+
+
+
+
+
+
+def TwoOddOccorring(arr, size):
+    xorof2=arr[0]
+    x=0
+    y=0
+    set_bit = 0
+    for i in range(1, size):
+        xorof2=xorof2^arr[i]
+    set_bit= xorof2 & ~(xorof2-1)
+    for i in range(size):
+        if ([arr] & set_bit):
+            x = x^arr[i]
         else:
-            zeros += 1
-        n>>=1
-    print(f"Ones: {ones} Zeros: {zeros}")
-
-num = int(input("What is the Number?: "))
-numberOfBits(num)
-
-
-
-
-
-
-
-
-def setOrNot(num, n):
-    if num & (1<<(n-1)):
-        print("\n Set")
-    else:
-        print("\n Not a Set")
-
-num = int(input("What is the number?: "))
-n = int(input("Enter a position?: "))
-setOrNot(num, n)
-
-
+            y = y^arr[i]
+    print("Two odd occoring elments are " ,x, y)
     
-    
+arr = []
+n = int(input("Enter the size: "))
+while(n):
+    num = int(input("Enter a number: "))
+    arr.append(num)
+    num-=1
+TwoOddOccorring(arr, len(arr))
