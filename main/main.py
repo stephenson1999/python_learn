@@ -1,42 +1,42 @@
-def out_occering_2(arr):
-    out_corred = []
-    res = 0
-    for i in arr:
-        res = res^i
-    return res
-arr = []
-size = int(input("Enter the size of the array"))
-while (size):
-    num = int(input("Enter a number $(o <> o)$ :"))
-    arr.append(num)
-    size -= 1
-
-print("The odd occurring element is: ", out_occering_2)
-
-
-
-
-
-
-def TwoOddOccorring(arr, size):
-    xorof2=arr[0]
-    x=0
-    y=0
-    set_bit = 0
-    for i in range(1, size):
-        xorof2=xorof2^arr[i]
-    set_bit= xorof2 & ~(xorof2-1)
-    for i in range(size):
-        if ([arr] & set_bit):
-            x = x^arr[i]
-        else:
-            y = y^arr[i]
-    print("Two odd occoring elments are " ,x, y)
-    
-arr = []
-n = int(input("Enter the size: "))
-while(n):
-    num = int(input("Enter a number: "))
-    arr.append(num)
-    num-=1
-TwoOddOccorring(arr, len(arr))
+#1
+def power2(number):
+    if number == 0:
+        return 0
+    if(number & (-(number-1))):
+        return 1
+    return 0
+number = int(input("Enter a number. : "))
+if power2(number):
+    print("Yes")
+else:
+    print("No")
+#2
+def powerof4(number):
+    count = 0
+    if number == 0:
+        return 0
+    while number > 1:
+        number>>=1
+        count+=1
+    if count%2==0:
+        return 1
+    else:
+        return 0
+number = int(input("Enter a number: "))
+if powerof4(number):
+    print("Yes")
+    print("Power of 4")
+else:
+    print("No")
+#3
+def computer_power(x,y):
+    results = 0
+    while(y>0):
+        if (y%2==0):
+            x=x*x
+        y>>=1
+    else:
+        results = results*x
+x= int(input("Enter a number: "))
+y= int(input("Enter a number: "))   
+print(computer_power(x, y))
