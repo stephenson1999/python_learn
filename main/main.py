@@ -1,37 +1,29 @@
-# def headrec(n, num):
-#     if n>num:
-#         return
-#     headrec(n+1, num)
-#     print(n, end=" ")
-# headrec(1,10)
-
-# def tailrec(n,num):
-#     if n > num:
-#         return
-#     print(n, end=" ")
-#     tailrec(n+1, num)
-# tailrec(1,16)
-
-# def indec(n, num):
-#     if (n>1 or n>num):
-#         return
-#     print(n)
-#     indec(n-1, num)
-#     print(n)
-# n = int(input("Enter a number: "))
-# indec(n,n)
+list = ["apple", "cherry", "bannana", "grapefruit", "enlderberry"]
+sorted = list.sort()
+if list == sorted:
+    print("the list is sorted")
+else:
+    print("the list is not sorted")
 
 
+list1 = [1,2,3,4,5,6,7]
+list2 = [2,2,3,6,43,5,34,6,23]
+len1 = len(list1)
+len2 = len(list2)
+sum = len1 + len2
+print(sum)
 
-def fib(n, level=0):
-    print(" ",* level + f"(fib{n})")
 
+def largest(n, current_max=None):
     if n == 0:
-        return
-    elif n == 1: 
-        return 1
-    else: 
-        return fib(n-1, level+1) + fib(n-2, level+1)
+        return current_max
+    num = int(input("Enter Number: "))
 
-n=5
-restult = fib(n)
+    if current_max is None or num > current_max:
+        current_max = num
+
+    return largest(n-1, current_max)
+
+count = int(input("how many numbers"))
+largest = print("largest element: ", largest(count))
+    
