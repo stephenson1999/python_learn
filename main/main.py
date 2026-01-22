@@ -3,7 +3,7 @@ def ways(stairs):
     if stairs<0:
         return 0 
     if stairs==1:
-        return 1
+        return 1  
     two_steps = 0
     one_step = 0
     three_steps = 0
