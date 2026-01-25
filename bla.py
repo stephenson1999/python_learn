@@ -1,29 +1,40 @@
-num = int(input("Enter a number: "))
+def all_paths_maze(N, M):
+    paths = []
 
-def ways(num):
-    five_hundred = num // 500
-    num %= 500
 
-    one_hundred = num // 100
-    num %= 100
+    def backtrack(x, y, path):
 
-    ten = num // 10
-    num %= 10
+        if x == N - 1 and y == M - 1:
+            paths.append(path[:])
+            return
 
-    five = num // 5
-    num %= 5
+        if y + 1 < M:
+            path.append('R')
+            backtrack(x, y + 1, path)
+            path.pop()
 
-    one = num
+        if x + 1 < N:
+            path.append('D')  
+            backtrack(x + 1, y, path)
+            path.pop()
 
-    return five_hundred, one_hundred, ten, five, one
+    backtrack(0, 0, [])
+    return paths
 
-Five_Hundred, One_Hundred, Ten, Five, One = ways(num)
 
-print(
-    f"{Five_Hundred} five hundred cent coins.\n"
-    f"{One_Hundred} one hundred cent coins.\n"
-    f"{Ten} ten cent coins.\n"
-    f"{Five} five cent coins.\n"
-    f"{One} one cent coins."
-)
+if __name__ == "__main__":
+    N = 4
+    M = 4
 
+    paths = all_paths_maze(N, M)
+
+    print(f"All possible paths in a {N}x{M} maze moving only Right and Down:\n")
+    for i, p in enumerate(paths, 1):
+        print(f"Path {i}: {''.join(p)}")
+
+    print(f"\nTotal paths: {len(paths)}")
+
+
+
+
+    
