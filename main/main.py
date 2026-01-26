@@ -1,30 +1,53 @@
-keypad = ["","","abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"]
-def printcombonation(cobination, curr, output, n):
-    if curr == n:
-        print(output)
-        return
-    for i in range(len(keypad[cobination[curr]])):
-        output.append(len(keypad[cobination[curr]]))
-        printcombonation(cobination,curr+1,output, n)
-        output.pop()
-        if cobination[curr]==0 or cobination[curr]==1:
-            return
-combnation = [3,2,6]
-n=len(combnation)
-printcombonation(combnation, 0, [], n)
+arr = [2,6,3,4,8,4]
+n = len(arr)
+mean = sum(arr) / n
+
+arr.sort()
+if n%2 != 0:
+    medien = arr[n//2]
+else:
+    medien = (arr[n//2-1] + arr[n//2]/2)
+
+print(mean)
+print(medien)
 
 
-def tower(n, source, destanation, auxiliary):
-    if n == 1:
-        print("Disk1 from source", source,"to ",destanation)
-        return
-    tower(n-1, source, destanation, auxiliary)
-    print(f"Move Disk {n} from source", source,"to ",destanation)
-    tower(n-1, source, destanation, auxiliary)
 
-n = 3
-tower(n, 'A', 'B', 'C')
-    
 
-    
+
+
+
+arr = list(map(int, input("Enter array of elements").split()))
+n = len(arr)
+max_element = arr[0]
+min_element = arr[0]
+
+for i in range(1,n):
+    if arr[i] > max_element:
+        max_element = arr[i]
+    if arr[i] < min_element:
+        min_element = arr[i]
+
+print("Max: ",max_element)
+print("Min: ",min_element)
+
+
+
+
+array = [2,5,8,34,21,7,12]
+n = len(array)
+
+largest = arr[0]
+second_largest = -10**9
+
+for i in range(1,n):
+    if arr[i] > largest:
+      second_largest = largest
+      largest = arr[i]
+    elif arr[i] < largest and arr[i]>second_largest:
+        second_largest = arr[i]
+
+
+print(second_largest)
+
 

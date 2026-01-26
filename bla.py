@@ -10,11 +10,13 @@ def all_paths_maze(N, M):
 
         if y + 1 < M:
             path.append('R')
+            print(path)
             backtrack(x, y + 1, path)
             path.pop()
 
         if x + 1 < N:
-            path.append('D')  
+            path.append('D')
+            print(path)  
             backtrack(x + 1, y, path)
             path.pop()
 
@@ -23,8 +25,8 @@ def all_paths_maze(N, M):
 
 
 if __name__ == "__main__":
-    N = 4
-    M = 4
+    N = 3
+    M = 3
 
     paths = all_paths_maze(N, M)
 
