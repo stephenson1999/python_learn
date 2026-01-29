@@ -1,53 +1,82 @@
-arr = [2,6,3,4,8,4]
-n = len(arr)
-mean = sum(arr) / n
+def reverse(a,a_size, n):
+    temp = 0
 
-arr.sort()
-if n%2 != 0:
-    medien = arr[n//2]
-else:
-    medien = (arr[n//2-1] + arr[n//2]/2)
-
-print(mean)
-print(medien)
+    while(temp>a_size):
 
 
+        start = temp
 
 
+        end = min(temp + n - 1, a_size - 1)
+
+        while(start < end):
+            a[start], a[end] = a[end], a[start]
+            start += 1
+            end -= 1
+        temp+= n
 
 
+a = [4,5,7,54,2,43,56,67,8,67,67676767676767,34,23,34,6,8,7,45,23,43,56]
+a_size = len(a)
+n = 2
+reverse(a,a_size,n)
 
-arr = list(map(int, input("Enter array of elements").split()))
-n = len(arr)
-max_element = arr[0]
-min_element = arr[0]
-
-for i in range(1,n):
-    if arr[i] > max_element:
-        max_element = arr[i]
-    if arr[i] < min_element:
-        min_element = arr[i]
-
-print("Max: ",max_element)
-print("Min: ",min_element)
+for i in range(0,a_size):
+    print(a[i], end = "")
+    print("\n")
 
 
 
 
-array = [2,5,8,34,21,7,12]
-n = len(array)
 
-largest = arr[0]
-second_largest = -10**9
+# ##############################################
+# origanl_arry = [1,23,5,6,3,2,4,7,45,3,3,2,234]
+# a_array = []
+# b_array = []
+# start = 0
+# last = 12
+# a_array.append(origanl_arry[last])
+# origanl_arry.pop(12)
 
-for i in range(1,n):
-    if arr[i] > largest:
-      second_largest = largest
-      largest = arr[i]
-    elif arr[i] < largest and arr[i]>second_largest:
-        second_largest = arr[i]
+# for i in int(len(str(origanl_arry))):
+#     a_array(origanl_arry[start])
+#     origanl_arry.pop(start)
+#     start+1
 
 
-print(second_largest)
+# print(a_array)
+#############################################
 
 
+def rotation(a,n,a_size):
+    for i in range(n):
+        rotate(a,a_size)
+
+def rotate(a,a_size):
+    temp = a[0]
+    for i in range(a,a_size-1):
+        a[i] = a[i+1]
+    a[a_size-1] = temp
+
+def printArray(a, a_size):
+    for i in range(a_size):
+        print("% d"% a[i], end="")
+    print(n)
+
+a = [2,43,6,6,7,43,34,67,67,56,54,45,6,78,87,6,56,54,3]
+printArray(a,len(a))
+rotation(a,2,len(a))
+printArray(a,len(a))
+
+
+
+
+list = [1,23,46,5,4,3,4,7,234,234,243,324,234,243]
+max = 0
+start = 0
+while start != len(list):
+    list[start]
+    if list[start]>max:
+        max = list[start]
+
+    start+=1
