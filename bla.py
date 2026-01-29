@@ -1,42 +1,10 @@
-def all_paths_maze(N, M):
-    paths = []
+array = [3, 23,5,3,3,2,5,4,42,3,4,24,32,4,2,342,4,2,3,7,454,5,64,7,32,42,3,4423,6,45,63,67]
+index = len(array) - 1
+new_array = []
 
+while index >= 0:
+    item = array[index]
+    new_array.append(item)
+    index -= 1
 
-    def backtrack(x, y, path):
-
-        if x == N - 1 and y == M - 1:
-            paths.append(path[:])
-            return
-
-        if y + 1 < M:
-            path.append('R')
-            print(path)
-            backtrack(x, y + 1, path)
-            path.pop()
-
-        if x + 1 < N:
-            path.append('D')
-            print(path)  
-            backtrack(x + 1, y, path)
-            path.pop()
-
-    backtrack(0, 0, [])
-    return paths
-
-
-if __name__ == "__main__":
-    N = 3
-    M = 3
-
-    paths = all_paths_maze(N, M)
-
-    print(f"All possible paths in a {N}x{M} maze moving only Right and Down:\n")
-    for i, p in enumerate(paths, 1):
-        print(f"Path {i}: {''.join(p)}")
-
-    print(f"\nTotal paths: {len(paths)}")
-
-
-
-
-    
+print(new_array)
