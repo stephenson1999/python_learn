@@ -1,82 +1,30 @@
-def reverse(a,a_size, n):
-    temp = 0
+def caculate_profit(arr,a_size):
+    profit = 0
+    for i in range(1,a_size):
+        if arr[i] > arr[i-1]:
+            profit += arr[i] - arr[i-1]
 
-    while(temp>a_size):
+    return profit
 
+prices = [234,4,53,34,534,53,453,4,65,7,87656,345765,34567543,234,54645,2342,765676,234234,6757,2342,676767]
 
-        start = temp
-
-
-        end = min(temp + n - 1, a_size - 1)
-
-        while(start < end):
-            a[start], a[end] = a[end], a[start]
-            start += 1
-            end -= 1
-        temp+= n
+profit = caculate_profit(prices, len(prices))
+print("Max profit: ", profit)
 
 
-a = [4,5,7,54,2,43,56,67,8,67,67676767676767,34,23,34,6,8,7,45,23,43,56]
-a_size = len(a)
-n = 2
-reverse(a,a_size,n)
+def find_water(a,a_size):
+    left_tallest = [0]*a_size
+    right_tellest = [0]*a_size
+    water = 0
+    left_tallest[0] = a[0]
+    for i in range(1,a_size):
+        left_tallest[i] = max(left_tallest[i-1], a[i])
+    right_tellest[a_size-1] = a[a_size-1]
+    for i in range(1,a_size):
+        water += min(left_tallest[i], right_tellest[i]) - a[i]
+    return water
 
-for i in range(0,a_size):
-    print(a[i], end = "")
-    print("\n")
-
-
-
-
-
-# ##############################################
-# origanl_arry = [1,23,5,6,3,2,4,7,45,3,3,2,234]
-# a_array = []
-# b_array = []
-# start = 0
-# last = 12
-# a_array.append(origanl_arry[last])
-# origanl_arry.pop(12)
-
-# for i in int(len(str(origanl_arry))):
-#     a_array(origanl_arry[start])
-#     origanl_arry.pop(start)
-#     start+1
-
-
-# print(a_array)
-#############################################
-
-
-def rotation(a,n,a_size):
-    for i in range(n):
-        rotate(a,a_size)
-
-def rotate(a,a_size):
-    temp = a[0]
-    for i in range(a,a_size-1):
-        a[i] = a[i+1]
-    a[a_size-1] = temp
-
-def printArray(a, a_size):
-    for i in range(a_size):
-        print("% d"% a[i], end="")
-    print(n)
-
-a = [2,43,6,6,7,43,34,67,67,56,54,45,6,78,87,6,56,54,3]
-printArray(a,len(a))
-rotation(a,2,len(a))
-printArray(a,len(a))
-
-
-
-
-list = [1,23,46,5,4,3,4,7,234,234,243,324,234,243]
-max = 0
-start = 0
-while start != len(list):
-    list[start]
-    if list[start]>max:
-        max = list[start]
-
-    start+=1
+a = [0,10101,1,0,3,5,6,6,4,7,9,5,3,56,8,5,3,5,7,9,6,4,670000,00000,0,0,0,0,0,0,0,0,0]
+bars = len(a)
+print("Water: ",find_water(a,bars))
+print("Bars: ", bars) 
