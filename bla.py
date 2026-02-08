@@ -1,14 +1,17 @@
-array = [0,2,4,6,8,10,14,16,18,20]
-wrong = None
-num = 0
+a = [1,0,0,1,2,2,2,0,1,0]
+ones = []
+zeros = []
+twos = []
 start = 0
-while wrong != True:
-    if num != array[start]:
-        wrong = True
-        num += 2
-    else:
-        start += 1
-        num += 2
-
-if wrong == True:
-    print("Wrong number detected, right number: ", num)
+for i in range(0, len(a)):
+    num = a[start]
+    if num == 0:
+        zeros.append(0)
+        a.pop(start)
+    if num == 1:
+        zeros.append(1)
+        a.pop(start)
+    if num == 2:
+        zeros.append(2)
+        a.pop(start)
+print(zeros,ones,twos)
