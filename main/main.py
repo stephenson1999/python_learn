@@ -1,23 +1,41 @@
-a = [834, 27, 592, 410, 76, 901, 233, 658, 19, 744,
- 315, 88, 472, 999, 64, 507, 281, 36, 690, 154,
- 823, 411, 58, 267, 731, 95, 604, 12, 389, 845,
- 176, 492, 708, 33, 561, 214, 980, 67, 329, 450,
- 781, 102, 639, 28, 915, 364, 59, 840, 221, 497,
- 16, 683, 254, 903, 71, 528, 397, 140, 762, 485,
- 930, 44, 318, 657, 209, 876, 91, 540, 602, 11,
- 468, 799, 132, 350, 924, 75, 286, 611, 418, 963,
- 57, 701, 343, 820, 166, 489, 38, 955, 274, 609,
- 187, 530, 412, 68, 846, 295, 734, 120, 501, 999]
+def equlim(arr):
+    right_side = 0
+    left_side = 0
+    n = len(arr)
+    for i in range(n):
+        left_side = 0
+        right_side = 0
+        for j in range(i):
+            left_side += arr[i]
+        for j in range(i):
+            right_side += arr[j]
+        if right_side == left_side:
+            return i
+        
+    return-1
 
-array = []
-i = 0
+arr = [1,7,43,98,3,6,2,43,67,4,21,56,67,43,23,1,32,54,56,34,21,16]
+print("Element: ", arr[equlim(arr)])
 
-while i < len(a) - 1:
-    num1 = a[i]
-    num2 = a[i+1]
-    if num1 % 2 == 0 and num2 % 2 == 1:
-        array.extend([num1, num2])
-    i += 1
 
-print(array)
+array = [1,7,43,98,3,6,2,43,67,4,21,56,67,43,23,1,32,54,56,34,21,16]
+left = []
+right = []
+n = len(array)
+start = 0
+for i in range(n):
+    if start >= len(array) / 2:
+        num = array[start]
+        left.append(num)
+        start+=1
+    if start <= len(array) / 2:
+        num = array[start]
+        right.append(num)
+        start+=1
 
+left_sum = left[0]+left[1]+left[1]+left[2]+left[3]+left[4]+left[5]+left[6]+left[7]+left[8]+left[9]+left[10]
+right_sum = right[0]+right[1]+right[1]+right[2]+right[3]+right[4]+right[5]+right[6]+right[7]+right[8]+right[9]+right[10]
+if left_sum == right_sum:
+    print("yes")
+else:
+    print("no")
