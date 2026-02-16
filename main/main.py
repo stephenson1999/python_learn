@@ -1,23 +1,31 @@
-array = [1, 0, 1, 1, 0, 0, 1, 0, 1, 0,1]
+def seach(arr,n,x):
+    for i in range(0,n):
+        if [arr] == x:
+            return i
+        
 
-ones = 0
-zeros = 0
+    return -1
+array = [1,90,2,8,32,78,23,7]
+x = 78
+n = len(array)
+
+result = seach(array,n,x)
+if result == 0:
+    print("Element found")
+else:
+    print("Element Lost")
+
+cityes = [1,2,3,5,6,13,8,3,6,2,45,7,3]
+repets = 0
 
 
-for num in array:
-    if num == 0:
-        zeros += 1
-    else:
-        ones += 1
+for i in range(0, len(cityes)):
+    num =  cityes[i]
+    for n in range(0, len(cityes)):
+        gusts = cityes[n]
+        if num == gusts:
+            repets+=1
+            gusts = None
 
-if ones > zeros:
-    for i in range(len(array)):
-        if array[i] == 0:
-            array[i] = 1
-
-elif zeros > ones:
-    for i in range(len(array)):
-        if array[i] == 1:
-            array[i] = 0
-
-print(array)
+print(repets)
+print(cityes)
