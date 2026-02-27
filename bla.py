@@ -1,18 +1,4 @@
-arr = [59, 12, 97, 41, 6, 73, 29, 84, 15, 62, 3, 90, 47, 21, 76, 34, 68, 9, 55, 100]
-new_arr = []
-biggest = False
-
-def bubble_sort(arr):
-    for i in range(0,len(arr)):
-        for j in range(0, len(arr)-i-1):
-            a = arr[i]
-            b = arr[i+1]
-            if a - b > 0:
-                arr[j], arr[j+1] = arr[j+1], arr[j]
-            print(arr)
-
-
-bubble_sort(arr)
+arr = [11, 10, -20, 5, -3, -5, 8, -13, 10]
 
 def bubble_search2(arr):
     n = len(arr)
@@ -29,6 +15,9 @@ bubble_search2(arr)
 print("Sorted Array: ")
 for i in range(len(arr)):
     print("%d"% arr[i], end=" ")
+
+
+
 
 
 
