@@ -1,9 +1,5 @@
-lenth = int(input("How long is your array?: "))
-array = []
-for i in range(lenth):
-    num = input("Number: ")
-    array.append(num)
 
+array = []
 
 n = len(array)
 interval = n // 2
