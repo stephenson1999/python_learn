@@ -1,23 +1,35 @@
-def sortzeroone(A,n):
-    count = 0
-    for i in range(0,n):
-        if (A[i] == 0):
-            count = count + 1
-    for i in range(0,count):
-        A[i] = 0
-    for i in range(count,n):
-        A[i] = 1
+def merge(left, right):
+    i = j = 0
+    result = []
+    
+    while i < len(left) and j < len(right):
+        if left[i] <= right[j]:
+            result.append(left[i])
+            i += 1
+        else:
+            result.append(right[j])
+            j += 1
 
-A = [1,0,1,1,1,0,1]
-n = len(A)
-
-sortzeroone(A,n)
-print("Sorted Array is: ", end=" ")
-for i in range(0,n):
-    print(A[i], end=" ")
+    result.extend(left[i:])
+    result.extend(right[j:])
+    return result
 
 
+def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    
+    mid = len(arr) // 2
+    left = merge_sort(arr[:mid])
+    right = merge_sort(arr[mid:])
+    
+    return merge(left, right)
 
+
+a1 = merge_sort([1,6,3,923,534,12])
+a2 = merge_sort([8,7,4,23,7,54,123])
+m = len(a1)
+n = len(a2)
 
 
 def unionofarray(a1,a2,m,n):
@@ -41,13 +53,4 @@ def unionofarray(a1,a2,m,n):
         print(a2[j], end=" ")
         j += 1
 
-a1 = [1,2,5,6]
-a2 = [3,4]
-m = len(a1)
-n = len(a2)
 unionofarray(a1,a2,m,n)
-
-
-
-
-
