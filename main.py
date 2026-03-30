@@ -1,5 +1,5 @@
 
-array = []
+array = [1,6,4,5,8]
 
 n = len(array)
 interval = n // 2
