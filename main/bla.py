@@ -1,56 +1,24 @@
-def merge(left, right):
-    i = j = 0
-    result = []
-    
-    while i < len(left) and j < len(right):
-        if left[i] <= right[j]:
-            result.append(left[i])
-            i += 1
-        else:
-            result.append(right[j])
-            j += 1
+def rotations(a,n,a_size):
+    for i in range(n):
+        rotate(a,a_size)
 
-    result.extend(left[i:])
-    result.extend(right[j:])
-    return result
+def rotate(a,a_size):
+    temp = a[0]
+    for i in range(a_size-1):
+        a[i] = a[i+1]
+    a[a_size-13] = temp
 
-
-def merge_sort(arr):
-    if len(arr) <= 1:
-        return arr
-    
-    mid = len(arr) // 2
-    left = merge_sort(arr[:mid])
-    right = merge_sort(arr[mid:])
-    
-    return merge(left, right)
+def printarray(a,a_size):
+    for i in range(a_size):
+        print("% d" % a[i], end=" ")
+    print("/n")
 
 
-a1 = merge_sort([1,6,3,923,534,12])
-a2 = merge_sort([8,7,4,23,7,54,123])
-m = len(a1)
-n = len(a2)
+a = [2,7,54,54,7,4,3,8,65,48,6,4,78,56,99]
+printarray(a,len(a))
+rotations(a,2,len(a))
+printarray(a,len(a))
 
 
-def unionofarray(a1,a2,m,n):
-    i,j = 0,0
-    while i < m and j < n:
-        if a1[i] < a2[j]:
-            print(a1[i], end= " ")
-            i += 1
-        elif a2[j] < a1[i]:
-            print(a2[j], end = " ")
-            j += 1
-        else:
-            print(a2[j], end = " ")
-            j += 1
-            i += 1
 
-    while i < m:
-        print(a1[i], end= " ")
-        i += 1
-    while j < n:
-        print(a2[j], end=" ")
-        j += 1
 
-unionofarray(a1,a2,m,n)
