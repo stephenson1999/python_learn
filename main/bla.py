@@ -1,99 +1,70 @@
-# class Node(self, data):
-#     self.data = data
-#     self.next = None
-
-# class singlyLL:
-#     def __init__(self):
-#         self.head = None
-
-# class insert_beg(self,data):
-#     nb = Node(data)
-#     nb.next = self.head
-#     self.head = nb
-
-
-#     def insert_end(self , data):
-#         ne = Node(data)
-#         temp = self.head
-#         while temp.next:
-#             temp = temp.next
-#         temp.next = ne
-    
-#     def disply(self):
-#         if self.head == None:
-#             print("List is empty")
-#         else: 
-#             temp = self.head
-#             while temp:
-#                 print(temp.data, "-->", end = " ")
-#                 temp = temp.next
-
-
-# l = singlyLL()
-# n = Node(10)
-# l.head = n
-# n1 = Node(20)
-# n.next = n1
-# n2 = Node(30)
-# n1.next = n2
-# l.disply()
-# print(end="\n")
-# l.insert_end(100)
-# l.disply()
-# print(end="\n")
-# l.insert_end(100)
-# l.disply()
-
-
 class Node:
-    def __init__(self,data):
+    def __init__(self, data):
         self.data = data
         self.next = None
 
-class SinglyLL:
+
+class LinkedList:
     def __init__(self):
         self.head = None
-    
-    def delete_beg(self):
-        if self.head != None:
-            temp = self.head
-            self.head = self.head.next
-            temp = None
 
-    def delete_end(self):
-        if self.head != None:
-            if self.head.next == None:
-                self.head = None
-            else:
-                temp = self.head
-                while temp.next.next:
-                    temp = temp.next
-                temp.next = None
+
+    def append(self, data):
+        new_node = Node(data)
+
+        if self.head is None:
+            self.head = new_node
+            return
+
+        current = self.head
+        while current.next:
+            current = current.next
+
+        current.next = new_node
 
     def display(self):
-        if self.head == None:
-            print('List is empty')
-        else:
-            temp = self.head
-            while temp:
-                print(temp.data, "-->", end= " ")
-                temp = temp.next
+        current = self.head
+        while current:
+            print(current.data, end=" → ")
+            current = current.next
+        print("None")
 
 
+    def find(self, target):
+        current = self.head
+        position = 0
 
-l = SinglyLL()
-n = Node(10)
-l.head = n
-n1 = Node(20)
-n.next = n1
-n2 = Node(30)
-n1.next = n2
-l.display()
-print(end="\n")
-l.display()
-print(end="\n")
-l.disply()
+        while current:
+            if current.data == target:
+                return position
+            current = current.next
+            position += 1
+
+        return -1  
+
+ll = LinkedList()
+
+ll.append(3)
+ll.append(7)
+ll.append(10)
+ll.append(15)
+
+print("Linked List:")
+ll.display()
 
 
+value = 10
+result = ll.find(value)
 
+if result != -1:
+    print(f"{value} found at position {result}")
+else:
+    print(f"{value} not found")
 
+value = 5
+result = ll.find(value)
+
+if result != -1:
+    print(f"{value} found at position {result}")
+else:
+    print(f"{value} not found")
