@@ -1,70 +1,113 @@
 class Node:
-    def __init__(self,data):
+    def __init__(self, data):
         self.data = data
         self.next = None
+        self.prev = None
 
-class SingLL:
+
+class DoubleLL:
     def __init__(self):
         self.head = None
 
-    def swap(self,n1,n2):
-        prevNode1 = None
-        prevNode2 = None
-        node1 = self.head
-        node2 = self.head
+    def insert_beg(self,data):
+        nb = Node(data)
+        temp = self.head
+        while temp.next:
+            temp = temp.next
+        temp.next = nb
+        nb.prev = temp
 
-        if (self.head == None):
-            return
-        
-        if n1 == n2:
-            return
-        
-        while (node1 != None and node1.data != n1):
-            prevNode1 = node1
-            node1 = node1.next
-
-        while (node2 != None and node1.data != n2):
-            prevNode2 = node2
-            node2 = node2.next
-
-        if (node1 != None and node2 != None):
-
-            if(prevNode1 != None):
-                prevNode1.next = node2
-            else:
-                self.head = node2
-
-            if(prevNode2 != None):
-                prevNode2.next = node1
-            else:
-                self.head = node1
-
-            temp = node1.next
-            node1.next = node2.next
-            node2.next = temp
-        else:
-            print("Swaping is not possible")
+    def insert_end(self,data):
+        nb = Node(data)
+        temp = self.head
+        while temp.next:
+            temp = temp.next
+        temp.next = nb
+        nb.prev = temp
 
 
     def display(self):
-        if self.head == None:
+        if self.head is None:
             print("List is empty")
         else:
             temp = self.head
             while temp:
                 print(temp.data, "--", end=" ")
                 temp = temp.next
+            print()  
 
-l = SingLL()
+
+l = DoubleLL()
 n = Node(10)
 l.head = n
 n1 = Node(20)
 n.next = n1
 n2 = Node(30)
+n1.prev = n
 n1.next = n2
-n3 = Node(40)
-n2.next = n3
 l.display()
-print(end="\n")
-l.swap(10,30)
+print(end='\n')
+l.insert_beg(100)
+l.display()
+print(end='\n')
+l.insert_end(100)
+l.display()
+
+
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+        self.prev = None
+
+
+
+class DoubleLL:
+    def __init__(self):
+        self.head = None
+
+    def delete_beg(self):
+        if self.head != None:
+            temp = self.head
+            self.head = self.head.next
+            self.head.prev = None
+            temp = None
+
+    def delete_end(self,data):
+        if self.head != None:
+            if self.head.next == None:
+                self.head = None
+            else:
+                temp = self.head
+                while temp.next.next:
+                    temp = temp.next
+                temp.next = None
+
+
+    def display(self):
+        if self.head is None:
+            print("List is empty")
+        else:
+            temp = self.head
+            while temp:
+                print(temp.data, "--", end=" ")
+                temp = temp.next
+            print()  
+
+
+l = DoubleLL()
+n = Node(10)
+l.head = n
+n1 = Node(20)
+n.next = n1
+n2 = Node(30)
+n1.prev = n
+n1.next = n2
+l.display()
+print(end='\n')
+l.delete_beg(100)
+l.display()
+print(end='\n')
+l.delete_end(100)
 l.display()
