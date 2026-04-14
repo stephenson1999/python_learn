@@ -9,11 +9,6 @@ class DoubleLL:
     def __init__(self):
         self.head = None
 
-    def swap(self, n1, n2):
-        if self.head is None or n1 == n2:
-            return
-
-
     def display(self):
         if self.head is None:
             print("List is empty")
@@ -39,8 +34,3 @@ n2.next = n3
 
 l.display()
 
-l.swap(10, 30)
-l.display()
-
-l.swap(20, 40)
-l.display()
