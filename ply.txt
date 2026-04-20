@@ -1,0 +1,2 @@
+Nasa_discoverys_of_2026="https://www.nasa.gov/blogs/watch-the-skies/2026/01/16/most-notable-2026-astronomical-events-a-year-of-watching-the-skies/"
+Bomb="https://books.google.com/books?id=NemTDwAAQBAJ&printsec=copyright#v=onepage&q&f=false"

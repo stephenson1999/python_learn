@@ -1,44 +1,46 @@
-kind = input("add,mutiplay, minus, divide: ")
-
-x = [[8,2],
-    [4,1]]
-
-y = [[3,8],
-     [9,15]]
-
-answer = [[0,0], [0,0]]
-
-for i in range(len(x)):
-    for j in range(len(x[0])):
-        if kind == "add":
-            answer[i][j] = x[i][j] + y[i][j]
-        if kind == "mutiplay":
-            answer[i][j] = x[i][j] * y[i][j]
-        if kind == "minus":
-            answer[i][j] = x[i][j] - y[i][j]
-        if kind == "divide":
-            answer[i][j] = x[i][j] /     y[i][j]
+a = 0
+b = 0
+c = 0
 
 
-print(answer)
+x = [[1,6,8],
+         [7,3,5],
+         [6,9,2],]
 
+# # # # # # # # # # # answer = [[0,0,0],
+# # # # # # # # # # #           [0,0,0],
+# # # # # # # # # # #           [0,0,0]]
 
+# # # # # # # # # # # for i in range(len(x)):
+# # # # # # # # # # #     for j in range(len(x[0])):
+# # # # # # # # # # #         answer[i][j] = x[j][i]
+        
 
+# # # # # # # # # # # for r in answer:
+# # # # # # # # # # #     print(r)
+# # # # # # # # # # 
+# # # # # # # # # 
+# # # # # # # # 
+# # # # # # # 
+# # # # # # 
+# # # # # 
+# # # # 
+# # # 
+# # 
+# 
 
+# # # # # # # # answer =  0
+# # # # # # # # for i in range(len(x)):
+# # # # # # # #     for j in range(len(x[0])):
+# # # # # # # #         answer = answer + x[j][i]
+# # # # # # # #     print(answer, end=" ")
+# # # # # # # #     answer = 0
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Nasa_discoverys_of_2026="https://www.nasa.gov/blogs/watch-the-skies/2026/01/16/most-notable-2026-astronomical-events-a-year-of-watching-the-skies/"
-Bomb="https://books.google.com/books?id=NemTDwAAQBAJ&printsec=copyright#v=onepage&q&f=false"
+# # # # # # # # 0
+# # # # # # # 1
+# # # # # # 2
+# # # # # 3
+# # # # 4
+# # # 5
+# # 6
+# 7
