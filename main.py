@@ -1,46 +1,21 @@
-a = 0
-b = 0
-c = 0
-
-
-x = [[1,6,8],
-         [7,3,5],
-         [6,9,2],]
-
-# # # # # # # # # # # answer = [[0,0,0],
-# # # # # # # # # # #           [0,0,0],
-# # # # # # # # # # #           [0,0,0]]
-
-# # # # # # # # # # # for i in range(len(x)):
-# # # # # # # # # # #     for j in range(len(x[0])):
-# # # # # # # # # # #         answer[i][j] = x[j][i]
+def reverse(s):
+    n = len(s)
+    li = list(s)
+    for i in range(n//2):
+        li[i], li[n-i-1] = li[n-i-1], li[i]
+        return "".join(li)
         
+inp = input("Enter a string: ")
+print(reverse(inp))
 
-# # # # # # # # # # # for r in answer:
-# # # # # # # # # # #     print(r)
-# # # # # # # # # # 
-# # # # # # # # # 
-# # # # # # # # 
-# # # # # # # 
-# # # # # # 
-# # # # # 
-# # # # 
-# # # 
-# # 
-# 
 
-# # # # # # # # answer =  0
-# # # # # # # # for i in range(len(x)):
-# # # # # # # #     for j in range(len(x[0])):
-# # # # # # # #         answer = answer + x[j][i]
-# # # # # # # #     print(answer, end=" ")
-# # # # # # # #     answer = 0
 
-# # # # # # # # 0
-# # # # # # # 1
-# # # # # # 2
-# # # # # 3
-# # # # 4
-# # # 5
-# # 6
-# 7
+
+inp = "apoisjf poeifj paowiejfiaopjpiejpieojpoipjefioejspfijseifjdaij"
+print(inp[:3])
+print(inp[3:])
+print(inp[1:5:2])
+print(inp[::-1])
+print(inp[-1:-9:-2])
+print(inp[-2:-9:-2])
+
