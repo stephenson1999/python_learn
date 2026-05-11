@@ -1,9 +1,9 @@
 def remove(s):
     result = ""
-    li = ["a","e","i","o","u"]
+    li = [" "]
     for i in range(len(s)):
         if s[i] in li:
-            result = result+" "
+            result = result+""
         else:
             result = result+s[i]
     return result
