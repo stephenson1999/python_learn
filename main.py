@@ -1,15 +1,14 @@
-def reverse(s):
-    return s[::-1]
-def paridrom(s):
-    s=s.lower()
-    rev_str = reverse(s)
-    if s == rev_str:
-        print("The string is a Paridrom")
-    else:
-        print("The string is not a Paridrom")
+def remove(s):
+    result = ""
+    li = ["a","e","i","o","u"]
+    for i in range(len(s)):
+        if s[i] in li:
+            result = result+" "
+        else:
+            result = result+s[i]
+    return result
 
-string = input("Enter a string:  ")
-paridrom(s=string)
-
+s = input("string:")
+print(remove(s))
 
 
