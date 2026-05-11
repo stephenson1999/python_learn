@@ -1,2 +1,15 @@
-Nasa_discoverys_of_2026="https://www.nasa.gov/blogs/watch-the-skies/2026/01/16/most-notable-2026-astronomical-events-a-year-of-watching-the-skies/"
-Bomb="https://books.google.com/books?id=NemTDwAAQBAJ&printsec=copyright#v=onepage&q&f=false"
+Mr. Merkel:
+“Hi Mr.Merkel , I just wanted to say Happy Teacher’s Day,
+ and thank you for all your help and teaching.
+  I really appreciate it. This is just a small gift for you.”
+
+Mrs. Ravatt:
+“Hi Mrs.Ravatt, Happy Teacher’s Day and happy birthday.
+ Thank you for everything and for helping with that rumor.
+  I really appreciate it—this is for you.”
+
+Ms. Hlavac:
+“Hi Ms.Hlavac, I just wanted to say thank you for taking care of that rumor.
+ It really meant a lot to me. Happy Teacher’s Day,
+  and this is just a small gift for you.”
+
