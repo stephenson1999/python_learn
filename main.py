@@ -1,14 +1,15 @@
-def change_the_keys(s):
-    result = ""
-    for i in s:
-        if s.islower():
-            result = result+i.upper()
-        if s.isupper():
-            result = result+i.lower()
-    print(result)
-    return result
-    
-string = input("Enter a string: ")
-change_the_keys(s=string)
+def reverse(s):
+    return s[::-1]
+def paridrom(s):
+    s=s.lower()
+    rev_str = reverse(s)
+    if s == rev_str:
+        print("The string is a Paridrom")
+    else:
+        print("The string is not a Paridrom")
+
+string = input("Enter a string:  ")
+paridrom(s=string)
+
 
 
