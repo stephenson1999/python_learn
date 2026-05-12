@@ -8,7 +8,8 @@ def remove(s):
             result = result+s[i]
     return result
 
-s = input("string:")
+# s = input("string:")
+s = "bla bla bla \n bla bla bla"
 print(remove(s))
 
 
