@@ -1,15 +1,14 @@
-def remove(s):
-    result = ""
-    li = [" "]
+def frequencey(s):
+    s = s.lower()
+    d = {}
     for i in range(len(s)):
-        if s[i] in li:
-            result = result+""
+        if s[i] in d.keys():
+            d[s[i]] += 1
         else:
-            result = result+s[i]
-    return result
+            d[s[i]] = 1
+    return d
 
-# s = input("string:")
-s = "bla bla bla \n bla bla bla"
-print(remove(s))
+s = input("Enter a string: ")
+print(frequencey(s))
 
 
