@@ -1,24 +1,11 @@
-
 s = input("Enter a string: ")
-def frequencey_conparing(s):
-    s = s.lower()
-    d = {}
-    for i in range(len(s)):
-        if s[i] in d.keys():
-            d[s[i]] += 1
-        else:
-            d[s[i]] = 1
-    
+words = 0
 
-    for i in range(len(d)):
-        if d[s[i]] == 2:
-            print("Falase")
-        else:
-            print("True")
+for i in range(len(s)):
+    if s[i] == " ":
+        words += 1
 
-
-
-frequencey_conparing(s)
-
+words += 1
+print(words)
 
 
