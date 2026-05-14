@@ -1,4 +1,5 @@
-def frequencey(s):
+
+def frequencey_conparing(s,t):
     s = s.lower()
     d = {}
     for i in range(len(s)):
@@ -6,9 +7,24 @@ def frequencey(s):
             d[s[i]] += 1
         else:
             d[s[i]] = 1
-    return d
+
+    t = t.lower()
+    c = {}
+    for i in range(len(s)):
+        if t[i] in c.keys():
+            c[t[i]] += 1
+        else:
+            c[t[i]] = 1
+
+    if c == d:
+        print("True")
+    else:
+        print("Falase")
 
 s = input("Enter a string: ")
-print(frequencey(s))
+t = input("Enter a string: ")
+
+frequencey_conparing(s,t)
+
 
 
