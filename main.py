@@ -1,40 +1,26 @@
-def iprice(barcode):
 
-    l=[]
+def nextWord(s):
 
-    for i in barcode:
+if (s == ""):
 
-        n=ord(i) #ordinal that returns a unicode
+return "a"
 
-        print(n)
 
-        if n//10: # if a num is > 9
+i = len(s) - 1
 
-            max=0
+while (s[i] == 'z' and i >= 0):
 
-            while n>0:
+i -= 1
 
-                if n % 10>max:
 
-                    max=n%10
+if (i == -1):
 
-                    print(max)
+s = s + 'a'
 
-                    n=n//10
+s = s.replace(s[i], chr(ord(s[i]) + 1), 1)
 
-                    print(n)
+return s
 
-                    l.append(max)
+inp = input("Enter string: ")
 
-                    print(l)
-
-                else:
-
-                    l.append(n)
-
-                    return sum(l)
-
-barcode=input("Enter")
-
-print(iprice(barcode))
-
+print(nextWord(inp))
