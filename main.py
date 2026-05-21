@@ -1,26 +1,21 @@
+def first_non_repeating_char(s):
 
-def nextWord(s):
-
-if (s == ""):
-
-return "a"
+    char_count = {}
 
 
-i = len(s) - 1
-
-while (s[i] == 'z' and i >= 0):
-
-i -= 1
+    for char in s:
+        char_count[char] = char_count.get(char, 0) + 1
 
 
-if (i == -1):
+    for char in s:
+        if char_count[char] == 1:
+            return char
 
-s = s + 'a'
+    return None
 
-s = s.replace(s[i], chr(ord(s[i]) + 1), 1)
 
-return s
 
-inp = input("Enter string: ")
+text = "swiss"
+result = first_non_repeating_char(text)
 
-print(nextWord(inp))
+print("First non-repeating character:", result)
