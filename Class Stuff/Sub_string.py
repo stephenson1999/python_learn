@@ -1,8 +1,29 @@
-string  = input("Enter a string: ")
-found = 0
-for i in range(len(string)):
-    if string[i] == "'":
-        found += 1
+def sort(s):
 
-if found == 2:
-    print("There is a supb string ")
+# code here
+
+    li = []
+
+    ans = ""
+
+    for i in range(26):
+
+        li.append(0)
+
+    for i in range(len(s)):
+
+        ind = ord(s[i]) - ord('a')
+
+        li[ind] += 1
+
+    for i in range(26):
+
+        if li[i] >= 1:
+
+            for j in range(li[i]):
+
+                ans = ans + chr(ord('a') + i)
+
+    return ans
+
+print(sort("edba"))
