@@ -1,47 +1,52 @@
 
-from sys import maxsize
+# from sys import maxsize
 
-def createStack():
+# def createStack():
 
-    stack = []
+#     stack = []
 
-    return stack
+#     return stack
 
-def isEmpty(stack):
+# def isEmpty(stack):
 
-    return len(stack) == 0
+#     return len(stack) == 0
 
-def push(stack, item):
+# def push(stack, item):
 
-    stack.append(item)
+#     stack.append(item)
 
-    print(item + " pushed to stack ")
+#     print(item + " pushed to stack ")
 
-def pop(stack):
+# def pop(stack):
 
-    if isEmpty(stack):
+#     if isEmpty(stack):
 
-        return str(-maxsize - 1)
+#         return str(-maxsize - 1)
 
-    return stack.pop()
+#     return stack.pop()
 
-def peek(stack): #Returns the top item and keeps it inside the stack
+# def peek(stack): #Returns the top item and keeps it inside the stack
 
-    if isEmpty(stack):
+#     if isEmpty(stack):
 
-        return str(-maxsize - 1)
+#         return str(-maxsize - 1)
 
-    return stack[len(stack) - 1]
+#     return stack[len(stack) - 1]
 
-stack = createStack()
+# stack = createStack()
 
-push(stack, str(10))
+# push(stack, str(10))
 
-push(stack, str(20))
+# push(stack, str(20))
 
-push(stack, str(30))
+# push(stack, str(30))
 
-print(pop(stack) + " popped from stack")
+# print(pop(stack) + " popped from stack")
 
 
 
+def stack_span(s):
+    last = s[-1]
+    print(last)
+s = [1,2,3,45,6,7,8,64]
+stack_span(s)
