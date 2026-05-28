@@ -1,21 +1,4 @@
-def first_non_repeating_char(s):
-
-    char_count = {}
-
-
-    for char in s:
-        char_count[char] = char_count.get(char, 0) + 1
-
-
-    for char in s:
-        if char_count[char] == 1:
-            return char
-
-    return None
-
-
-
-text = "swiss"
-result = first_non_repeating_char(text)
-
-print("First non-repeating character:", result)
+def reomove(s):
+    return "".join(dict.fromkeys(s))
+text = "Proggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrooooooooooooooooooooooo"
+print(reomove(text))
