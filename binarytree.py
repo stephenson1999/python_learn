@@ -1,59 +1,91 @@
+# class Node:
+
+#     def __init__(self,data):
+#         self.left_ = None
+#         self.data = data
+#         self.right_ = None
+
+# def find_size_recurseve(root):
+    
+#     if root is None:
+#         return 0 
+    
+#     return find_size_recurseve(root.left_) + find_size_recurseve(root.right_) + 1
+
+# def find_size_iterative(root):
+    
+#     if root is None:
+#         return 0 
+    
+#     count = 0
+#     stack = []
+#     stack.append(root)
+
+#     while stack:
+#         node = stack.pop()
+#         count + 1
+
+#         if node.left_ is not None:
+#             stack.append(node.left_)
+#         if node.right_ is not None:
+#             stack.append(node.right_)
+
+#     return count
+
+
+# root = Node(1)
+
+# root.left_ = Node(2)
+
+# root.right_ = Node(3)
+
+# root.left_.left_ = Node(4)
+
+# root.left_.right_ = Node(5)
+
+# root.right_.left_ = Node(6)
+
+# root.right_.right_ = Node(7)
+
+# root.right_.left_.left_ = Node(8)
+
+# root.right_.left_.right_ = Node(9)
+
+
+# size_recurseve = find_size_recurseve(root)
+# print(f"The size of the binary tree (recursive) is: {size_recurseve}")
+
+# size_iterative = find_size_iterative(root)
+# print(f"The size of the binary tree (iterative) is: {size_iterative}")
+
 class Node:
 
-    def __init__(self,data):
-        self.left_child = None
-        self.data = data
-        self.right_child = None
-
-def find_size_recurseve(root):
-    
+    def __init__(self,key):
+        self.key = key
+        self.left = None
+        self.right = None
+def sum_tree_recurseve(root):
     if root is None:
         return 0 
-    
-    return find_size_recurseve(root.left_child) + find_size_recurseve(root.right_child) + 1
+    return sum_tree_recurseve(root.left) + sum_tree_recurseve(root.right) + root.key
 
-def find_size_iterative(root):
-    
-    if root is None:
-        return 0 
-    
-    count = 0
-    stack = []
-    stack.append(root)
+if __name__ == '__main__':
+    root = Node(10)
 
-    while stack:
-        node = stack.pop()
-        count + 1
+    root.left = Node(20)
 
-        if node.left_child is not None:
-            stack.append(node.left_child)
-        if node.right_child is not None:
-            stack.append(node.right_child)
+    root.right = Node(30)
 
-    return count
+    root.left.left = Node(40)
+    root.left.right = Node(50)
 
+    root.right.left = Node(60)
 
-root = Node(1)
+    root.right.right = Node(70)
 
-root.left_child = Node(2)
+    root.right.left.left = Node(80)
 
-root.right_child = Node(3)
+    root.right.left.right = Node(90)
 
-root.left_child.left_child = Node(4)
-
-root.left_child.right_child = Node(5)
-
-root.right_child.left_child = Node(6)
-
-root.right_child.right_child = Node(7)
-
-root.right_child.left_child.left_child = Node(8)
-
-root.right_child.left_child.right_child = Node(9)
-
-
-size_recurseve = find_size_recurseve(root)
-print(f"The size of the binary tree (recursive) is: {size_recurseve}")
-
-size_iterative = find_size_iterative(root)
-print(f"The size of the binary tree (iterative) is: {size_iterative}")
+    total_sum = sum_tree_recurseve(root)
+    print(f"sum of all nodes is ", total_sum)
