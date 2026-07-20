@@ -58,34 +58,45 @@
 # size_iterative = find_size_iterative(root)
 # print(f"The size of the binary tree (iterative) is: {size_iterative}")
 
-class Node:
+# class Node:
 
-    def __init__(self,key):
-        self.key = key
-        self.left = None
-        self.right = None
-def sum_tree_recurseve(root):
-    if root is None:
-        return 0 
-    return sum_tree_recurseve(root.left) + sum_tree_recurseve(root.right) + root.key
+#     def __init__(self,key):
+#         self.key = key
+#         self.left = None
+#         self.right = None
+# def sum_tree_recurseve(root):
+#     if root is None:
+#         return 0 
+#     return sum_tree_recurseve(root.left) + sum_tree_recurseve(root.right) + root.key
 
-if __name__ == '__main__':
-    root = Node(10)
+# if __name__ == '__main__':
+#     root = Node(10)
 
-    root.left = Node(20)
+#     root.left = Node(20)
 
-    root.right = Node(30)
+#     root.right = Node(30)
 
-    root.left.left = Node(40)
-    root.left.right = Node(50)
+#     root.left.left = Node(40)
+#     root.left.right = Node(50)
 
-    root.right.left = Node(60)
+#     root.right.left = Node(60)
 
-    root.right.right = Node(70)
+#     root.right.right = Node(70)
 
-    root.right.left.left = Node(80)
+#     root.right.left.left = Node(80)
 
-    root.right.left.right = Node(90)
+#     root.right.left.right = Node(90)
 
-    total_sum = sum_tree_recurseve(root)
-    print(f"sum of all nodes is ", total_sum)
+#     total_sum = sum_tree_recurseve(root)
+#     print(f"sum of all nodes is ", total_sum)
+
+left = 0
+right = 0
+
+a = right, left, right
+
+b = str(a)
+
+c = len(a)
+
+print(c)
