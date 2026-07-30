@@ -1,4 +1,4 @@
-from binarytree import Node
+from a import Node
 
 root=Node(1)
 
