@@ -1,33 +1,25 @@
+numbers = [1,3,2,3,5,8,13]
+fibbioci = True
 
-graph = {
-    "A": ["B", "C"],
-    "B": ["D"],
-    "C": ["D"],
-    "D": []
-}
-
-
-def dfs(current, destination, path):
-    path = path + [current]
-
- 
-    if current == destination:
-        print("Path found:", path)
-        return 1
-
-    total = 0
-
-
-    for neighbor in graph[current]:
-        if neighbor not in path:
-            total += dfs(neighbor, destination, path)
-
-    return total
+def fibbioci_sequence(numbers, fibbioci):
+    num1 = 0
+    num2 = 1
+    num3 = 2
+    for i in range(len(numbers) - 2):
+        if numbers[num1] + numbers[num2] == numbers[num3]:
+            fibbioci = True
+            print(f"Round {i + 1}: {numbers[num1]} + {numbers[num2]} = {numbers[num3]} Correct")
+        else:
+            fibbioci = False
+            print(f"Round {i + 1}: {numbers[num1]} + {numbers[num2]} = {numbers[num3]} False")
+            return fibbioci
+        num1 += 1
+        num2 += 1
+        num3 += 1
+    
+    print(f"Fibbioci is {fibbioci}. ")
+    return
 
 
-start = "A"
-end = "D"
+fibbioci_sequence(numbers, fibbioci)
 
-answer = dfs(start, end, [])
-
-print("Total number of paths:", answer)
