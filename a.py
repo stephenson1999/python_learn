@@ -1,61 +1,33 @@
 
-# 8 Queens Problem using Backtracking
-
-N = 8
-board = [-1] * N
-
-
-# Part 1: Check if a queen is safe
-def is_safe(board, row, col):
-    for r in range(row):
-        c = board[r]
-
-        # Check same column
-        if c == col:
-            return False
-
-        # Check diagonals
-        if abs(r - row) == abs(c - col):
-            return False
-
-    return True
+graph = {
+    "A": ["B", "C"],
+    "B": ["D"],
+    "C": ["D"],
+    "D": []
+}
 
 
-# Part 2: Solve using backtracking
-def solve(board, row):
-    # All 8 queens have been placed
-    if row == N:
-        return True
+def dfs(current, destination, path):
+    path = path + [current]
 
-    # Try every column in this row
-    for col in range(N):
-        if is_safe(board, row, col):
-            board[row] = col
+ 
+    if current == destination:
+        print("Path found:", path)
+        return 1
 
-            # Try placing the next queen
-            if solve(board, row + 1):
-                return True
-
-            # Backtrack if it doesn't work
-            board[row] = -1
-
-    return False
+    total = 0
 
 
-# Part 3: Print the chessboard
-def print_board(board):
-    for col in board:
-        for j in range(N):
-            if j == col:
-                print("Q", end=" ")
-            else:
-                print(".", end=" ")
-        print()
+    for neighbor in graph[current]:
+        if neighbor not in path:
+            total += dfs(neighbor, destination, path)
+
+    return total
 
 
-# Part 4: Run the program
-if solve(board, 0):
-    print("Solution found!")
-    print_board(board)
-else:
-    print("No solution found.")
+start = "A"
+end = "D"
+
+answer = dfs(start, end, [])
+
+print("Total number of paths:", answer)
